@@ -442,7 +442,7 @@ function enviarPedidoWhatsApp() {
         "Aguardo a confirmação do pedido!"
     ].join("\n");
 
-    const numeroWhatsApp = "5579996857121";
+    const numeroWhatsApp = "557981712173";
 
     const url =
         `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
