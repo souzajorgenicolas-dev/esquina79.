@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Esquina 79 | Cardápio</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="assets/logoEsquina79.png" alt="Logo Esquina 79">
+
+        <p>Seu sabor favorito em um só lugar!</p>
+    </header>
+
+    <main>
+
+        <section class="categorias">
+
+            <h2>Nosso cardápio</h2>
+
+            <nav>
+                <button data-categoria="Tapiocas">Tapiocas</button>
+                <button data-categoria="Escondidinhos">Escondidinhos</button>
+                <button data-categoria="Lasanhas">Lasanhas</button>
+                <button data-categoria="Cuscuz">Cuscuz</button>
+            </nav>
+
+        </section>
+
+        <section class="produtos">
+
+            <h2>Produtos</h2>
+
+            <div id="lista-produtos"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Esquina 79 &copy; 2026</p>
+        <p>Seu sabor favorito em um só lugar!</p>
+    </footer>
+
+    <button id="botao-carrinho" class="botao-carrinho">
+
+        <span>🛒</span>
+        <span>Meu carrinho</span>
+        <span id="quantidade-carrinho">0</span>
+
+    </button>
+
+    <div id="fundo-carrinho" class="fundo-carrinho">
+
+        <div class="carrinho">
+
+            <div class="cabecalho-carrinho">
+
+                <h2 id="titulo-carrinho">Meu carrinho</h2>
+
+                <button id="fechar-carrinho" class="fechar-carrinho">
+                    ×
+                </button>
+
+            </div>
+
+            <div id="etapa-carrinho">
+
+                <div id="itens-carrinho" class="itens-carrinho">
+
+                    <p class="carrinho-vazio">
+                        Seu carrinho está vazio.
+                    </p>
+
+                </div>
+
+                <div class="resumo-carrinho">
+
+                    <div class="linha-total">
+
+                        <span>Subtotal</span>
+
+                        <strong id="subtotal-carrinho">
+                            R$ 0,00
+                        </strong>
+
+                    </div>
+
+                    <button id="continuar-checkout" class="botao-finalizar">
+                        Continuar pedido
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div id="etapa-checkout" class="checkout escondido">
+
+                <h3>Dados da entrega</h3>
+
+                <label for="bairro">
+                    Bairro
+                </label>
+
+                <select id="bairro">
+
+                    <option value="">
+                        Selecione seu bairro
+                    </option>
+
+                    <option value="Luzia" data-taxa="3">
+                        Luzia - R$ 3,00
+                    </option>
+
+                    <option value="Ponto Novo" data-taxa="3">
+                        Ponto Novo - R$ 3,00
+                    </option>
+
+                    <option value="Farolândia" data-taxa="6">
+                        Farolândia - R$ 6,00
+                    </option>
+
+                    <option value="Jabotiana" data-taxa="4">
+                        Jabotiana - R$ 4,00
+                    </option>
+
+                    <option value="Bairro América" data-taxa="4">
+                        Bairro América - R$ 4,00
+                    </option>
+
+                    <option value="Inácio Barbosa" data-taxa="4">
+                        Inácio Barbosa - R$ 4,00
+                    </option>
+
+                    <option value="São Conrado" data-taxa="4">
+                        São Conrado - R$ 4,00
+                    </option>
+
+                    <option value="Grageru" data-taxa="4">
+                        Grageru - R$ 4,00
+                    </option>
+
+                    <option value="Jardins" data-taxa="4">
+                        Jardins - R$ 4,00
+                    </option>
+
+                    <option value="Pereira Lobo" data-taxa="4">
+                        Pereira Lobo - R$ 4,00
+                    </option>
+
+                    <option value="Centro" data-taxa="5">
+                        Centro - R$ 5,00
+                    </option>
+
+                    <option value="Siqueira Campos" data-taxa="5">
+                        Siqueira Campos - R$ 5,00
+                    </option>
+
+                </select>
+
+                <label for="endereco">
+                    Endereço completo
+                </label>
+
+                <textarea
+                    id="endereco"
+                    placeholder="Rua, número, complemento e ponto de referência..."
+                    rows="3"></textarea>
+
+                <label for="observacoes">
+                    Observações do pedido
+                </label>
+
+                <textarea
+                    id="observacoes"
+                    placeholder="Ex.: sem cebola, pouco sal..."
+                    rows="3"></textarea>
+
+                <h3>Forma de pagamento</h3>
+
+                <label for="forma-pagamento">
+                    Como deseja pagar?
+                </label>
+
+                <select id="forma-pagamento">
+
+                    <option value="">
+                        Selecione a forma de pagamento
+                    </option>
+
+                    <option value="Pix">
+                        Pix
+                    </option>
+
+                    <option value="Dinheiro">
+                        Dinheiro
+                    </option>
+
+                    <option value="Cartão de crédito/débito">
+                        Cartão de crédito/débito
+                    </option>
+
+                </select>
+
+                <div id="opcoes-dinheiro" class="escondido">
+
+                    <label for="precisa-troco">
+                        Precisa de troco?
+                    </label>
+
+                    <select id="precisa-troco">
+
+                        <option value="">
+                            Selecione uma opção
+                        </option>
+
+                        <option value="Não">
+                            Não
+                        </option>
+
+                        <option value="Sim">
+                            Sim
+                        </option>
+
+                    </select>
+
+                    <div id="campo-troco" class="escondido">
+
+                        <label for="valor-troco">
+                            Troco para quanto?
+                        </label>
+
+                        <input
+                            type="number"
+                            id="valor-troco"
+                            min="0"
+                            step="0.01"
+                            placeholder="Ex.: 50.00">
+
+                    </div>
+
+                </div>
+
+                <div class="resumo-final">
+
+                    <h3>Resumo do pedido</h3>
+
+                    <div class="linha-total">
+
+                        <span>Subtotal</span>
+
+                        <strong id="resumo-subtotal">
+                            R$ 0,00
+                        </strong>
+
+                    </div>
+
+                    <div class="linha-total">
+
+                        <span>Taxa de entrega</span>
+
+                        <strong id="taxa-entrega">
+                            R$ 0,00
+                        </strong>
+
+                    </div>
+
+                    <div class="linha-total total-final">
+
+                        <span>Total</span>
+
+                        <strong id="resumo-total">
+                            R$ 0,00
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <button id="voltar-carrinho" class="botao-voltar">
+                    Voltar ao carrinho
+                </button>
+
+                <button id="finalizar-pedido" class="botao-finalizar">
+                    Enviar pedido pelo WhatsApp
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/produtos.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
